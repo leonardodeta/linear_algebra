@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+
+% ===== Pacchetti base =====
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+% ===== Pacchetti matematici =====
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+% ===== Colori, link e grafica =====
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    hidelinks % Nasconde i link
+}
+\usepackage[most]{tcolorbox}  % <-- aggiunto [most] per usare opzioni avanzate
+\usepackage{titling}
+\usepackage{setspace}
+
+% ===== Impostazioni per i listati =====
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily,
+    breaklines=true,
+    breakatwhitespace=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}
+}
+
+% ===== Ambienti personalizzati =====
+\newtcolorbox{definition}{
+  colback=green!5!white,
+  colframe=green!40!black,
+  title=Definition
+}
+
+\newtcolorbox{example}{
+  colback = yellow!5!white,
+  colframe = yellow!40!black,
+  title = Example
+}
+
+\newtcolorbox{formulabox}[1][]{
+  colback=blue!5!white,
+  colframe=blue!60!black,
+  fonttitle=\bfseries,
+  title=#1,
+  boxrule=0.8pt,
+  arc=3mm,
+  left=6pt, right=6pt, top=6pt, bottom=6pt
+}
+
+\newtcolorbox{remark}[1][]{
+  colback=gray!5!white,
+  colframe=gray!60!black,
+  fonttitle=\bfseries,
+  title=#1,
+  boxrule=0.8pt,
+  arc=3mm,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  enhanced,
+  colbacktitle=gray!50!white
+}
+
+\newtcolorbox{theorem}[1][]{
+  colback=red!5!white,
+  colframe=red!60!black,
+  fonttitle=\bfseries,
+  title=#1,
+  boxrule=0.8pt,
+  arc=3mm,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  enhanced,
+  colbacktitle=red!50!white
+}
+
+% ===== Stile del titolo =====
+\pretitle{\begin{center}\Huge\bfseries}
+\posttitle{\par\vspace{0.5em}\hrule height 1pt \vspace{0.5em}\end{center}}
+\preauthor{\begin{center}\large}
+\postauthor{\end{center}}
+\predate{\begin{center}\normalsize}
+\postdate{\end{center}}
+
+\title{\textcolor{blue!50!black}{Linear algebra}}
+\author{
+    \textbf{Leonardo Detassis} \\[6pt]
+    \small Master's Degree in Data Science \\[2pt]
+    \small University of Trento – Department of Mathematics
+}
+\date{2025}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+
+\newpage
+
+\input{lezione_1}
+\input{lezione_2}
+\input{lezione_3}
+\input{lezione_4}
+\include{lezione_5}
+
+\end{document}

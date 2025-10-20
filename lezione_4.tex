@@ -1,0 +1,219 @@
+\subsection{Equation of a plane given an orthogonal vector and a point}
+Considering a vector $\vec n = (n_1,n_2,n_3) \in \mathbb{R}^3$, the plane through the origin and orthogonal to $\vec n$ is the set of points $(x,y,z)$ such that the vector $(x,y,z)$ is orthogonal to $\vec n$, i.e., they must satisfy
+$$(x,y,z) \bullet \left(n_1, n_2, n_3\right) = 0$$
+$$\Updownarrow$$
+$$n_1x+n_2y+n_3z = 0$$
+Cartesian equation of the plane throught the origin and orthogonal to $\vec n$.
+
+In general, the equation of a plane through a point $A = (x_A, y_A, z_A) \in \mathbb{R}^3$ and orthogonal to $\vec n$ in the set of points $(x,y,z) \in \mathbb{R}^3$ such that the vector $(x-x_A, y-y_A, z-z_A)$ is orthogonal to $\vec n$ and so 
+$$(x-x_A, y-y_A, z-z_A) \bullet(n_1,n_2,n_3) = 0 $$
+$$\Updownarrow$$
+$$n_1(x-x_A) + n_2(y-y_A) + n_3(z-z_A) = 0$$
+Cartesian equation of a plane through the point $A$ and orthogonal to $\vec v$.
+
+\begin{remark}[Remark]
+    Given $X \subseteq \mathbb{R}^n$, in order to check if $X$ is a vector space, it is sufficient to check if ($X \not = \emptyset$) it is closed under addition and multiplication by a scalar, i.e,
+    $$\forall \ x,y \in X, \text{ check if } x+y \in X$$
+    $$\forall \ x \in X, \ \forall \ \lambda \in \mathbb{R}, \text{ check if } \lambda x \in X $$
+\end{remark}
+\section{Matrices}
+Given $m, n \in \mathbb{N} \setminus \left\{ 0 \right\}$ an $m \times n$ matrix ($m$ rows and $n$ columns). Is and object of this kind
+$$A = \begin{bmatrix}
+    a_{11} &a_{12} &a_{13} &\dots &a_{1n}\\
+    a_{21} &a_{22} &a_{23} &\dots &a_{2n}\\
+    \vdots &\vdots &\vdots &\ddots &\vdots\\
+    a_{m1} &a_{m2} &a_{m3} &\dots &a_{mn}
+\end{bmatrix}$$
+where the elements of $A$ are $a_{ij} \in \mathbb{R} \quad \forall\ i,j \ 1\le i \le m \ \ 1 \le j \le n$.
+
+Sometimes we will also write $\overline{A} = (a_{ij})$. We also call the elements $a_{ij}$ as element of the matrix. A matrix is an element of $\mathbb{R}^{m\times n} = \mathbb{R}^{m\cdot n} = \mathbb{R}^{m,n} $
+\begin{itemize}
+    \item[] If a matrix $A \in \mathbb{R}^{m\times m}$ is called a square matrix 
+    \item[] A matrix in $\mathbb{R}^{1 \times n}$ is called a row vector 
+    \item[] A matrix in $\mathbb{R}^{m\times 1}$ is called a column vector  
+\end{itemize}
+Since $\mathbb{R}^{m \times n}$ (the set of all matrices with $m$ rows and $n$ columns) is a set of the kind $\mathbb{R}^K$, we know that $\mathbb{R}^{m \times n}$ is a vector space where the operations are 
+\begin{itemize}
+    \item Addition (componentwise)
+    $$\forall \ A,B \in \mathbb{R}^{m \times n} \qquad \text{we have } A+B=(a_{ij} + b_{ij}) \in \mathbb{R}^{m\times n}$$
+    $$\begin{bmatrix}
+        a_{11}+b_{11} &a_{12}+b_{12} &\dots &a_{1m}+b_{1m} \\
+        \vdots &\vdots &\ddots &\vdots\\
+        a_{m1}+b_{m1} &a_{m2}+b_{m2} &\dots &a_{mn}+b_{mn}
+    \end{bmatrix}$$
+    \item Multiplication by a scalar
+    $$\forall \ A \in \mathbb{R}^{m\times n} \quad \forall \ \lambda \in \mathbb{R} \quad \text{we have } \lambda A = (\lambda a_{ij}) \in \mathbb{R}^{m \times n}$$
+    $$\begin{bmatrix}
+        \lambda a_{11} &\lambda a_{12} &\dots &\lambda a_{1m} \\
+        \vdots &\vdots &\ddots &\vdots\\
+        \lambda a_{m1} &\lambda a_{m2} &\dots &\lambda a_{mn}
+    \end{bmatrix}$$
+\end{itemize}
+In general a linear system is a set of equation with a certain number of unknowns that must satisfy these equations simultaneously:
+\[
+\begin{cases}
+\begin{array}{cccccc}
+a_{11}x_1 &+& a_{12}x_2 &+& \cdots &+ a_{1n}x_n = b_1\\
+a_{21}x_1 &+& a_{22}x_2 &+& \cdots &+ a_{2n}x_n = b_2\\
+\vdots    && \vdots    && \ddots & \vdots\\
+a_{m1}x_1 &+& a_{m2}x_2 &+& \cdots &+ a_{mn}x_n = b_m
+\end{array}
+\end{cases}
+\]
+
+where $x_1, x_2, \dots, x_n$ are unknowns 
+\begin{itemize}
+    \item[] $a_{ij}\in \mathbb{R}$ given real numbers, coefficients of the linear system where $1 \le i \le m$ and $1\le j \le n$
+    \item[] $b_k \in \mathbb{R}$ given real numbers, constant term of the linear system where $1 \le k \le m$
+\end{itemize}
+Given the above linear system, we can associate to it some matrices:
+\begin{itemize}
+    \item[] The matrix of coefficients  $A = (a_{ij}) \in \mathbb{R}^{m\times n}$
+    \item[] The vector (matrix) of unknowns $\vec x = \begin{bmatrix}
+        x_1\\
+        x_2\\
+        \vdots\\
+        x_n\\
+    \end{bmatrix} \in \mathbb{R}^{n\times1}$ 
+    \item[] The vector (matrix) of constant tems $\vec b = \begin{bmatrix}
+        b_1\\
+        b_2\\
+        \vdots\\
+        b_m\\
+    \end{bmatrix} \in \mathbb{R}^{m\times1}$ 
+\end{itemize}
+Linear system with $m$ equations and $n$ unknowns.
+
+The definition of product became, thinking a linear system with
+\begin{itemize}
+    \item[] matrix of coefficients $A \in \mathbb{R}^{m\times n}$
+    \item[] vector of unknowns $\vec x \in \mathbb{R}^{n \times 1}$
+    \item[] vector of constant terms $\vec b \in \mathbb{R}^{m \times 1}$
+\end{itemize}
+is equivalent to 
+$$A \vec x = \vec b$$
+$$\mathbb{R}^{m \times n} \times \mathbb{R}^{n \times 1} \to \mathbb{R}^{m \times 1}$$
+\begin{remark}[Remark]
+    The dot product between two vectors $\vec v = (v_1, \dots, v_n)$ and $\vec w = (w_1, \dots, w_n)$ can be written also
+    $$\begin{bmatrix}
+        v_1, \dots, v_n
+    \end{bmatrix} \begin{bmatrix}
+        w_1\\
+        \vdots\\
+        w_n
+    \end{bmatrix} = v_1 w_1 + v_2 w_2 + \dots + v_n w_n = \vec v \bullet \vec w \to \mathbb{R}$$
+\end{remark}
+\begin{definition}
+    The transpose of a matrix $A \in \mathbb{R}^{m\times n}$ is a new matrix 
+    $$A^T \in \mathbb{R}^{n \times m}$$
+    where the rows of $A^T$ are the columns of  $A$ or equivalently the column of $A^T$ are the rows of $A$
+    $$A = \begin{bmatrix}
+        1 &\pi &-\sqrt{2} &3\\
+        0 &-1 &0 &3\\
+        \sqrt{3} &\frac{1+\sqrt{5}}{2} &2\pi &-1
+    \end{bmatrix} \quad A^T = \begin{bmatrix}
+        1 &0 &\sqrt{3}\\
+        \pi &-1 &\frac{1 + \sqrt{5}}{2}\\
+        -\sqrt{2} &0 &2\pi\\
+        3 &3 &-1
+    \end{bmatrix}$$
+\end{definition}
+\begin{remark}[Remark]
+    The product between matrices is non commutative!
+\end{remark}
+When $A$ and $B$ are square matrices, e.g., in $\mathbb{R}^{n\times n}$ then 
+$$AB \in \mathbb{R}^{n \times n} \quad \text{and} \quad BA \in \mathbb{R}^{n \times n} \qquad \text{but usually}$$
+$$AB \not = BA$$
+\begin{example}
+    $$A = \begin{bmatrix}
+        1 &0\\
+        0 & 0
+    \end{bmatrix} \quad B = \begin{bmatrix}
+        0 &1\\
+        0 &0
+    \end{bmatrix}$$
+    $$AB = \begin{bmatrix}
+        0 &1\\
+        0 & 0
+    \end{bmatrix} \quad BA =\begin{bmatrix}
+        0 &0\\
+        0 & 0
+    \end{bmatrix}$$
+\end{example}
+In the example $AB = 0$ product is $0$ even if $A, B \not = 0$
+$$A + \begin{bmatrix}
+        0 &0\\
+        0 & 0
+    \end{bmatrix} = A$$
+in general if $A \in \mathbb{R}^{m \times n}$, then $0  \in \mathbb{R}^{m \times n}$ whole element are all zeros is the identity.
+\begin{definition}
+    The matrix $I_n \in \mathbb{R}^{n \times n}$ with $I_n = \begin{bmatrix}
+        1 &\cdots &0\\
+        \vdots &1 &\vdots \\
+        0 &\cdots & 1
+    \end{bmatrix}$
+    
+    \begin{align*}
+        I_n = \left(I_{ij}\right) \qquad &I_{ij} = 0 \ \text{ if } \ i \not = j\\
+        &I_{ii} = 1 \ \text{ for all } i = 1, \dots, n 
+    \end{align*}
+    is the \textbf{identity matrix}. Indeed $\forall \ A \in \mathbb{R}^{n \times n}$ we have $AI_n = I_nA = A$ 
+\end{definition}
+\section{Solving linear systems}
+\begin{definition}
+    Two linear system are equivalent if they have the same solutions 
+    $$\begin{cases}
+        x + 2y + z = 1 \\
+        3x -4y +z = 0
+    \end{cases} \quad \text{is equivalent to} \quad \begin{cases}
+        x+2y+z = 1 \\
+        2x - y +z = \frac{1}{2}
+    \end{cases} $$
+\end{definition}
+First of all, we focus on homogeneous linear system, which are linear system where the constant term are all zeros: 
+$$A \vec x = \vec 0$$
+Our goal is to introduce some «transportation» which are called elementary operations on the matrix $A$ such that the new matrix $B$ where
+$$B \vec x = \vec 0 \quad \text{is equivalent to} \quad A\vec x = \vec 0$$
+Let us define there elementary operations $\quad A \in \mathbb{R}^{m\times n}$
+\begin{enumerate}
+    \item \textbf{Row switching}: switch two rows of $A$ (if we switch two rows of $A$ this is equivalent to switch two equations of the linear system $A \vec x = \vec 0$; we get an equivalent new linear system).
+    
+    We can switch two rows of  $A$ performing the following product:
+    $$S_{ij}A$$
+    where $S_{ij}$ is a matrix in $\mathbb{R}^{m\times m}$ obtained from the identity matrix $I_m$ switching the $i^{th}$ row of $I_m$ with the $j^{th}$ row of $I_m$
+    $$A \vec x = \vec 0$$
+    $$\Updownarrow$$
+    $$S_{ij}A \vec x = S_{ij} \vec 0$$
+    $$\Updownarrow$$
+    $$B \vec b = \vec 0 $$
+    where $B$ is obtained from $A$ switching the $i^{th}$ row with the $j^{th}$ row
+    \item \textbf{Row multiplication}: Multiply a row of $A$ by a scalar $\lambda \in \mathbb{R}$ (if you multiply an equation by  a scalar you get an equivalent equation)
+
+    We can obtain this operation, considering the following product
+    $$D_i(\lambda)A$$
+    Where $D_i(\lambda)$  is a diagona matrix $m \times m$ obtained from $I_m$ replacing $I_{ii}$ with $\lambda$
+    $$A \vec x = \vec 0 \iff D_i(\lambda)A \vec x = \vec 0 \iff B \vec x = \vec 0$$
+    \item \textbf{Row addition}: add to a row of $A$ anther row of $A$ multiplied by a scalar $\lambda \in \mathbb{R}$. We can obtain this elementary operation, considering the following product.
+    $$E_{ij} (\lambda) A$$
+    Where $E_{ij}(\lambda)$ is a $m \times m$ matrix obtained from $I_m$ replacing the element $I_{ij}$ with $\lambda \in \mathbb{R}$. This product replaces the $i^{th}$ row of $A$ with the sum of $i^{th}$ row of $A$ with the $j^{th}$ row of $A$ multiplied by $\lambda$. 
+    $$A\vec x = \vec 0 \iff E_{ij}(\lambda)A \vec x = \vec 0 \iff B \vec x = \vec 0$$
+\end{enumerate}
+\begin{definition}
+    A square matrix $A \in \mathbb{R}^{n \times m}$ is inverible (w.r.t. the  products) if there exist a matrix $B \in \mathbb{R}^{n\times m}$ such that $AB = BA = I_n$
+
+    In this case we write $B = A^{-1}$. The inverse of $A$ is denoted my $A^{-1}$ 
+\end{definition}
+Since when we start from a linear system with constant vector $\vec b$ we get an equivalent linear system with a new constant vector, it is useful to def with the argumented matrix $(A|b) \in \mathbb{R}^{m \times n+1}$
+
+In general, in order to solve a linear system $A\vec x = \vec b$ we want to obtain an equivalent linear system $B \vec x = \vec c$ where 
+$$(B| \vec c) \quad \text{(obtained from } (A| \vec b) \text{ using elementary operations)}$$
+is in the so-callet \textbf{Row-echelon form}. 
+\begin{definition}
+    A matrix $M \in \mathbb{R}^{a \times b}$ is in \textbf{row-echelon form (REF)} if:
+    \begin{enumerate}
+        \item The leading (first nonzero) entry of each nonzero row (called a \emph{pivot}) is strictly to the right of the pivot of the row above it.
+        \item All zero rows (if any) are at the bottom of the matrix.
+    \end{enumerate}
+\end{definition}
+
+

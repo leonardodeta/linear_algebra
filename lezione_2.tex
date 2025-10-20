@@ -1,0 +1,89 @@
+\section{Linear independence (linear dependence)}
+If two vectos $\vec v_1$ and $\vec v_2$ lie on the same line (throgh the origin) then they are linearly dependent (from a geometrical point of view).
+
+For an algebraic point of view this means that
+$$\vec v_1 = t \vec v_2 \quad t \in \mathbb{R}$$
+Two vectors are linearly independent if and only if they are not linearly dependent.
+
+In general if $\vec w_1$ and $\vec w_2$ are linearly independent vectors than all the vectors $\vec v \in \mathbb{R}$ can be written as a linear combination of $\vec w_1$ and $\vec w_2$, this means that
+$$\forall \ \vec v \in \mathbb{R}^2 \qquad \vec v = a \vec w_1 + b \vec w_2 \qquad \text{fore some } a,b \in \mathbb{R}$$
+and we say that  $\left\{ \vec w_1, \vec w_2 \right\}$ is a basis of $\mathbb{R}^2$.
+
+A special basis is $\left\{ \vec e_1, \vec e_2 \right\}$ where $\vec e_1 = (1,0)$, $\vec e_2 = (0,1)$ and it is called tha canonical basis. 
+
+$\left\{ \vec e_1, \vec e_2 \right\}$ is also an orthogonal basis because $\vec e_1$ and $\vec e_2$ ore orthogonal vectors.
+\section{Cartesian space}
+The cartesian space is $\mathbb{R}^3 = \mathbb{R} \times \mathbb{R} \times \mathbb{R}$ and its elements are triple of real number $(x,y,z) \quad \forall \ x,y,z \in \mathbb{R}$. 
+
+$O$ is a fixed point of the space, called the origin and we also have three orthogonal lines intersecting in the origin. 
+
+A point $A \in \mathbb{R}^3$ is identified by three real numbers $(x_A, y_A, z_A)$ where:
+\begin{itemize}
+    \item[] $x_a$ is the distance from the plane $Oyz$
+    \item[] $y_a$ is the distance from the plane $Oxz$
+    \item[] $z_a$ is the distance from the plane $Oxy$
+\end{itemize}
+Also in the cartesian space, we can compute the Euclidean distance between the origin $||\overline{OA}|| = d(O,A)$.
+Similarly the distance between $A = (x_A, y_A, z_A)$ and $B = (x_B, y_B, z_B)$ is $||\overline{AB}|| = d(A,B) = \sqrt{(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2}$.
+
+Similarly to $\mathbb{R}^2$, also in $\mathbb{R}^3$ the vectors are arrows starting from the origin and they are describes by triples of real numbers. 
+
+\begin{remark}[Operations in $\mathbb{R}^3$]
+Let us define some operations in $\mathbb{R}^3$:
+\begin{itemize}
+    \item Scalar multiplication:
+    \begin{align*}
+    &\mathbb{R} \times \mathbb{R}^3 \longrightarrow \mathbb{R}^3 \\
+    &(t, \vec v) \longmapsto t \vec v = (tv_1, tv_2, tv_3)\\
+    &(t, V) \longmapsto t V = (tv_1, tv_2, tv_3)
+    \end{align*}
+    where $\vec v = V = (v_1,v_2,v_3)$
+    \item Sum (componentwise):
+    \begin{align*}
+    &\mathbb{R}^3 \times \mathbb{R}^3 \longrightarrow \mathbb{R}^3\\
+    &(\vec v, \vec w) \longmapsto \vec v + \vec w = (v_1+w_1, v_2 + w_2, v_3 + w_3)\\
+    &(V, W) \longmapsto V + W = (v_1+w_1, v_2 + w_2, v_3 + w_3)
+    \end{align*}
+    where $\vec v = (v_1, v_2, v_3) \quad \vec w = (w_1, w_2, w_3)$ 
+\end{itemize}
+\end{remark}
+
+Given three vectors in $\mathbb{R}^3$, $\vec u, \vec v, \vec w$, we say that they are linearly dependent if there exist three real numbers $a,b,c \in \mathbb{R}$ not all zeros such that
+$$a \vec u + b \vec v + c \vec w = 0 = (0,0,0)$$
+$$\vec u = \alpha \vec v + \beta \vec w$$
+$$a \vec u + b \vec v + c \vec w = 0 \Leftrightarrow a \vec u = - b \vec v - c \vec w$$
+If the vectors $\vec u, \vec v, \vec w$, are not linearly dependent, then we sat that they are linearly independent.
+In general, given $\vec v_1, \vec v_2, \dots, \vec v_n$ we say that they are linearly dependent if and only if there exist $a_1, a_2, \dots, a_n \in \mathbb{R}$ not all zeros such that
+$$a_1 \vec v_1 + a_2 \vec v_2 + \dots + a_n \vec v_n = 0$$
+If $\vec v_1, \dots, \vec v_n$ are not linearly dependent, then we say that they are linearly independent. 
+
+In the space, if we have there linearly independent vectors $\vec w_1, \vec w_2, \vec w_3$, then all the vectors $\vec v \in \mathbb{R}^3$ can be written ad a linear combination of $\vec w_1, \vec w_2, \vec w_3$. And we say the $\left\{ \vec w_1, \vec w_2, \vec w_3 \right\}$ is a basis of $\mathbb{R}^3$.
+
+The canonical basis of $\mathbb{R}^3$ is $\left\{ \vec e_1, \vec e_2, \vec e_3 \right\}$ where $\vec e_1 = (1,0,0)$, $\vec e_2 = (0,1,0)$, $\vec e_3 = (0,0,1)$.
+
+Let us check that $\vec e_1, \vec e_2, \vec e_3$ ale linearly independent, we must find if there exist $a,b,c$ not all zeros such that 
+$$a   \vec e_1 + b \vec e_2 + v \vec e_3 = \vec 0$$
+$$(a,0,0) + (0,b,0) + (0,0,c) = \vec 0$$
+$$(a,b,c) = (0,0,0)$$
+$$\begin{cases}
+    a=0\\
+    b = 0\\
+    c=0
+\end{cases} \iff \vec e_1, \vec e_2, \vec e_3 \text{ are l.i.}$$
+$\forall \ \vec v\in \mathbb{R}^3$, $\vec v = (v_1, v_2, v_3)$, then $\vec v = v_1 \vec e_1 + v_2 \vec e_2 + v_3 \vec e_3$. 
+\begin{example}
+  $$\vec v = (5,3,2) = 5(1,0,0) + 3(0,1,0) + 2(0,0,1)$$
+\end{example}
+\subsection{Equation of a plane in $\mathbb{R}^3$}
+We wold like to characterize all the point belonging to some plane in $\mathbb{R}^3$
+\begin{align*}
+    \text{The plane}\qquad &Oxy = \left\{ (x,y,0): x,y \in \mathbb{R} \right\} \\
+    &Oyz = \left\{ (0,y,z): y,z \in \mathbb{R} \right\} \\
+    &Oxz = \left\{ (x,0,z): x,z \in \mathbb{R} \right\} 
+\end{align*}
+Given a generic plane in the space, it is uniquely determined by: 
+\begin{itemize}
+    \item Two interacting lines
+    \item Three non collinear points 
+    \item two linearly independent vectors (identify uniquely a plane through the origin) and a point in $\mathbb{R}^3$
+\end{itemize}

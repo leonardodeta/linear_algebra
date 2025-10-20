@@ -1,0 +1,158 @@
+The rows of a matrix, denoted by rank($M$), is the number of pivot of any REF for $M$. A column of $M$ is called pivot column if it contains one pivot.
+
+A matrix $M$ is in reduced row-echelon form RREF if 
+\begin{enumerate}
+    \item in in REF
+    \item all the pivot are 1
+    \item the only non-zero element of any pivot column is the pivot itself (REF is not unique. RREF is unique)
+\end{enumerate}
+Let consider $A \vec x = \vec b$ where $A \in \mathbb{R}^{m\times n}$ and focus on the augmented matrix $\left(A|\vec b\right)$, then we transform it into a matrix $\left(A'|\vec b'\right)$ that is REF and $A' \vec x = \vec b'$ is equivalent to $A \vec x = \vec b$
+\begin{enumerate}
+    \item If rank$\left(A' | \vec b' \right) \ne$ rank$\left( A' \right)$, then $A'\vec x=\vec b$ and $A \vec x = \vec b$ have no solutions
+    $$A' = \begin{bmatrix}
+        1 &-1 &2\\
+        0 &5 &3\\
+        0 &0 &-2\\
+        0 & 0 &0
+    \end{bmatrix} \quad \text{rank}(A') = 3$$
+    $$\left(A' | \vec b'\right) = \left[
+\begin{array}{ccc|c}
+1 & -1 & 2 &0\\
+0 & 5 & 3 & -1\\
+0 & 0 & -2 & 2\\
+0 & 0 & 0 &5
+\end{array}
+\right] \quad \text{rank}\left(A' | \vec b'\right) = 4 \ne \text{rank}(A')$$
+$$\begin{cases}
+\begin{alignedat}{4}
+x &{}-{}& y &{}+{}& 2z &{}={}& 0\\
+  &      & 5y&{}+{}& 3z &{}={}& -1\\
+  &      &   &      &-2z &{}={}& 2\\
+  &      &   &      & 0  &{}={}& 5
+\end{alignedat}
+\end{cases}$$
+Indeed, this means that the column $\vec b'$ in the augmented matrix must contain a pivot, i.e., a non-zero element $k$ in correspondence to a zero row of $A'$ and this yelds to a fals identity of the kind 
+$$0 = k \qquad k\in \mathbb{R} \qquad k \ne 0$$
+\item If rank $\left( A'|\vec b' \right) =$ rank$(A') = n$ number of unknowns, them there exists a unique solution 
+\begin{align*}
+    &A' = \begin{bmatrix}
+        1 &-1 &2\\
+        0 &5 &3\\
+        0 &0 &-2\\
+        0 & 0 &0
+    \end{bmatrix} \qquad A' \in \mathbb{R}^{4 \times 3} \Rightarrow \text{ 4 equations, 3 uknowns} \\
+    &\\
+    &\text{rank}(A') = 3 \\
+    &\\
+    &\left(A'|\vec b' \right) = \left[
+\begin{array}{ccc|c}
+1 & -1 & 2 &-1\\
+0 & 5 & 3 & 0\\
+0 & 0 & -2 & 3\\
+0 & 0 & 0 &0
+\end{array}
+\right] \qquad \text{rank}\left( A'|\vec b' \right) = 3\\
+&\\
+&\begin{cases}
+\begin{alignedat}{4}
+x &{}-{}& y &{}+{}& 2z &{}={}& -1\\
+  &      & 5y&{}+{}& 3z &{}={}& 0\\
+  &      &   &      &-2z &{}={}& 3\\
+  &      &   &      & 0  &{}={}& 0
+\end{alignedat}
+\end{cases}
+\end{align*}
+\item If rank$\left(A'|\vec b' \right) =$ rank$(A') < n$ ($n =$ number of unknowns) the linear system has infinitely many solutions.
+
+Consider for example
+\begin{align*}
+A' = &\begin{bmatrix}
+        1 &-1 &2\\
+        0 &5 &3\\
+        0 &0 &0\\
+        0 & 0 &0
+    \end{bmatrix} \quad \text{rank}(A') = 2 < 3 = n\\
+    \left(A' | \vec b'\right) = &\left[
+\begin{array}{ccc|c}
+1 & -1 & 2 &\sqrt{2}\\
+0 & 5 & 3 & -1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 &0
+\end{array}
+\right] \quad \text{rank}\left(A' | \vec b'\right) = 2\\
+& \qquad \Updownarrow \\
+&\begin{cases}
+\begin{alignedat}{4}
+x &{}-{}& y &{}+{}& 2z &{}={}& \sqrt{2}\\
+  &      & 5y&{}+{}& 3z &{}={}& -1\\
+  &      &   &      &0 &{}={}& 0\\
+  &      &   &      & 0  &{}={}& 0
+\end{alignedat}
+\end{cases} \qquad \forall \ z \in \mathbb{R}
+\end{align*}
+we have infinitely many solutions, because $z$ is a free variable, it can assume any value in $\mathbb{R}$
+\end{enumerate}
+\begin{theorem}[Rouché–Capelli Theorem]
+    Let $A\vec x = \vec b$ be a linear system, with $A \in \mathbb{R}^{m \times n}$ $\binom{n \text{ equations}}{m \text{ unknowns}}$ and let $\left( A'|\vec b' \right)$ be in REF obrained from $\left(A | \vec b\right)$, then (this $A'\vec x' = \vec b' $ is equivalent to $A \vec x = \vec b$)
+    \begin{enumerate}
+        \item if rank $\left(A | \vec b\right) \ne$ rank$\left(A'\right)$, then $A'\vec x = \vec b$ doesn't have solutions 
+        \item if rank $\left(A | \vec b\right) =$ rank$\left(A'\right) = n$ then $A'\vec x = \vec b$ has a unique solution
+        \item if rank $\left(A | \vec b\right) =$ rank$\left(A'\right) < n$ then $A'\vec x = \vec b$ has infinitely many solutions and $n$-rank$(A')$ is the number of free variables 
+    \end{enumerate}
+\end{theorem}
+
+\section{Vector subspaces}
+Given a vector space $V$ and $W \subseteq V$, we say that $W$ is a vector subspace of $V$ if it is a vector space.
+
+Given a vector space $V$ and $W \subseteq V$ then $W$ is a vector subspace if and only if
+\begin{itemize}
+    \item[a)] said $e \in V$ the identity w.r.t. the «addition», we have $e \in W$
+    \item[b)] $\forall \ w_1, w_2 \in W$, we have $w_1 * w_2 \in W$
+    \item[c)] $\forall \ w \in W$, $\forall \ \lambda \in \mathbb{R}$, we have $\lambda \odot w \in W$ 
+\end{itemize}
+Given a homogeneous linear system, the set of solutions (if it is not the empty set) is a vector space (in particular is a vector subspace of $\mathbb{R}^n$ where $n$ is the number of unknowns)
+
+Consider a linear system $A \vec x = \vec 0$ where $A \in \mathbb{R}^{m \times n}$, let $S$ be the set of solutions. We can have that $S = \left\{ (0, \dots, 0) \in \mathbb{R}^n \right\} \subseteq \mathbb{R}^n$ and it is a vector space (the trivial one). In general we have that $S = \left\{ \begin{bmatrix}
+    x_1\\
+    \vdots\\
+    x_n
+\end{bmatrix} \in \mathbb{R}^n = \mathbb{R}^{n \times 1} : A \vec x = \vec 0  \right\}$
+\begin{itemize}
+    \item[a)] We can check tat $\vec 0 \in S$
+    \item[b)] $\forall \ \vec v, \vec w \in S$, i.e., $A \vec v = \vec 0$ and $A \vec w = \vec 0$ we want to check that $\vec v + \vec w \in S$, i.e., we want to check that 
+    $$A\left(\vec v + \vec w\right) = \vec 0$$
+    indeed we can observe that $A \left( \vec v + \vec w \right) = A \vec v + A \vec w = \vec 0 + \vec 0 = \vec 0$
+    \item[c)] $\forall \ \vec v \in S$, $\forall \ \lambda \in \mathbb{R}$ we check that $\lambda \vec v \in S$, i.e., $A \left(\lambda \vec v \right) = \vec 0$ 
+\end{itemize}
+Given a non-homogeneous linear system, the set of its solutions is not a vector space.
+
+Let us consider $A \vec x = \vec b$ where $A \in \mathbb{R}^{m \times n}$ and $\vec b \ne \vec 0$ then $\vec 0 \not \in S =\left\{ \begin{bmatrix}
+    x_1\\
+    \vdots\\
+    x_n
+\end{bmatrix} \in \mathbb{R}^n  : A \vec x = \vec b \right\}$ because $A \vec 0 = \vec 0 \ne \vec b$
+\begin{definition}
+    Let $V$ be a vector space and $v_1, v_2, \dots, v_k \in V$ we define the set generated by $v_1, \dots, v_k$, and we call it the spanning set of $v_1, \dots, v_n$ the following set
+    $$\text{span}(v_1, \dots, v_k) = \left< v_1, \dots, v_k \right> = \left\{ c_1 v_1 + \cdots + c_k v_k : \forall \ c_1, \dots, c_k \in \mathbb{R} \right\}$$
+\end{definition}
+\begin{example}
+    In $\mathbb{R}^3$, given two vectors $\vec v_1, \vec v_2$ linearly independent, their spamming set is a plane through the origin
+    $$\text{span}(\vec v_1, \vec v_2) = \left\{ s\vec v_1 + t \vec v_2 : \forall \ s,t \in \mathbb{R} \right\}$$
+\end{example}
+\begin{definition}
+    Let $V$ be a vector space, we say that $\left\{ v_1, \dots, v_k \right\}$ with $v1, \dots, v_k \in V$ is set of generators of $V$ if $V = \text{span}(v_1, \dots, v_k)$
+\end{definition}
+\begin{definition}
+    Let $V$ be a vector space, we say that $\left\{ b_1, \dots, b_n \right\}$ with $b_1, \dots, b_n \in V$ is a basis of $V$ if
+    \begin{itemize}
+        \item $V = \text{span}(b_1, \dots, d_n)$
+        \item $b_1, \dots, b_n$ are linearly independent
+    \end{itemize}
+\end{definition}
+\begin{definition}
+    Let $V$ be a vector space, we sat that $w_1, \dots, w_h \in V$ are linearly independent if (given $c_1, \dots, c_h \in \mathbb{R}$)
+    $$c_1 w_1 + \dots + c_h w_h = 0 \quad (1)$$
+    $$\Updownarrow$$
+    $$c_1 = \dots = c_h = 0$$
+    if $(1)$ has a solution $c_1, \dots, c_h$ not all zeros, then $w_1, \dots, w_h$ are linearly dependent.
+\end{definition}

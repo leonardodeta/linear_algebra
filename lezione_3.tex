@@ -1,0 +1,147 @@
+We start considering a plane described by two linearly independent vectors, i.e., we are describing all the planes through the origin.
+
+We want to describe any point $P=(x_P, y_P, z_P)$ belonging to the plane identified by two linearly independent vectors $\vec v$ and $\vec w$.
+
+Remember that two linearly independent vectors can be used for constructing all the vectors belonging to the same plane (think, e.g., to the special case of the cartesian plane). All the points $P=(x_P,y_P,z_P)$ belonging to the plane containing the vectors $\vec v$ and $\vec w$ are linear combinations of $\vec v$ and $\vec w$:
+$$P= \overline{OP} = (x_P, y_P, z_P) = s \vec v + t \vec w \qquad \forall \ s,t  \in \mathbb{R}$$
+The parametric equations of the plane $\Pi$ through the origin and containg  $\vec v$ ans $\vec w$ are
+$$\begin{cases}
+    x = sv_1 + tw_1\\
+    y= sv_2 + tw_2\\
+    z = sv_3 + tw_3
+\end{cases} \qquad \forall \ s,t \in \mathbb{R}$$
+In other words
+$$\Pi = \left\{ (x,y,z) \in \mathbb{R}^3 : x = sv_1 + tw_1, y = sv_2+tw_2, z = sv_3+tw_3, \forall \ s,t \in \mathbb{R} \right\}$$
+The parametric equations of a plane $\Pi$ identified by two linearly independent vectors $\vec v$ and $\vec w$ and through a point $A = (x_A, y_A, z_A)$ are
+$$\begin{cases}
+    x = x_A +  sv_1 + tw_1\\
+    y= y_A + sv_2 + tw_2\\
+    z = z_A +  sv_3 + tw_3
+\end{cases} \qquad \forall \ s,t \in \mathbb{R}$$
+$$s = 0,\ t= 0 \quad \begin{cases}
+    x = x_A \\
+    y = y_A \\
+    z = z_A
+\end{cases}$$
+We can obtain the cartesian equation of a plane. If we focus on the equations $\begin{cases}
+    x = x_A + sv_1 + tw_1 \\
+    y = y_A + sv_2 + tw_2
+\end{cases}$ where $s$ and $t$ are unknowns. We can solve this linear system and we obtain the solutions:
+$$\begin{cases}
+    s = ax+by+f \quad a,b,f \in \mathbb{R}\\
+    t = cx+dy+g \quad c,d,g \in \mathbb{R}
+\end{cases}$$
+Now we substitute these values of $s$ and $t$ in the third equations:
+$$z = z_A + sv_3 + tw_3$$
+and we obtain something like $z = m+nx+py \quad m,n,p \in \mathbb{R}$ Cartesian equation of a plane in the space 
+$$\alpha x + \beta y + \gamma z + \delta = 0$$
+Cartesian equation, where $\alpha, \beta, \gamma, \delta \in \mathbb{R}$ depending on $\begin{matrix} &x_A,&y_A, &z_A \\  &v_1,&v_2,&v_3\\ &w_1,&w_2,&w_3 \end{matrix}$
+\subsection{Equations of a line in $\mathbb{R}^3$}
+A line is always described by two points.
+
+Let us start with a line through  the origin and a point $V = (v_1, v_2, v_3)$, i.e., we are considering the line describes by the vector $\vec v = \overline{OV} = (v_1,v_2,v_3)$ and so all the points in this line $\ell$ are described by
+$$(x,y,z) = t \vec v = (tv_1, tv_2, tv_3) \quad \forall \ t \in \mathbb{R} \iff \begin{cases}
+    x = tv_1 \\
+    y = tv_2 \\
+    z = tv_3
+\end{cases}$$
+A general line in the space is then described by a vector $\vec v$ (giving the direction ) and a point $C=(x_C, y_C, z_C)$ and the parametric equations are:
+$$\begin{cases}
+    x = x_C + tv_1\\
+    y = y_C + tv_2 \\
+    z = z_C + tv_3
+\end{cases} \qquad \forall \ t \in \mathbb{R}$$
+The above description of a line is equivalent to describe it giving two point $A = (x_A, y_A, z_A)$ and $B=(x_B,y_B,z_B)$
+$$\begin{cases}
+    x = x_A + t(x_B-x_A)\\
+    y = y_A + t(y_B-y_A) \\
+    z = z_A + t(z_B-z_A)
+\end{cases} \iff \begin{cases}
+    x = x_B + t(x_B-x_A)\\
+    y = y_B + t(y_B-y_A) \\
+    z = z_B + t(z_B-z_A)
+\end{cases} \quad \forall \ t \in \mathbb{R}$$
+A line in the space is identified by the intersection between two (non-parallel) plane: 
+$$\begin{cases}\alpha x + \beta y+ \gamma z + \delta= 0 \leftarrow \text{Cartesian equation of a plane}\\
+\alpha'x+\beta'y+\gamma'z+ \delta' = 0 \leftarrow \text{Cartesian equation of a plane}
+\end{cases} \quad \alpha, \beta,\gamma,\delta, \alpha', \beta', \gamma', \delta' \in \mathbb{R}
+$$
+\section{Vector space}
+\begin{itemize}
+    \item 0 - dimensional object $\to \mathbb{R}^0$
+    \item 1 - dimensional object $\to \mathbb{R}^1$
+    \item 2 - dimensional object $\to \mathbb{R}^2$
+    \begin{itemize}
+        \item 0 - dimensional object (points)
+        \item 1 - dimensional object (lines)
+    \end{itemize}
+    \item 3 - dimensional object $\to \mathbb{R}^3$
+    \begin{itemize}
+        \item 0 - dimensional object (points)
+        \item 1 - dimensional object (lines)
+        \item 2 - dimensional object (planes)
+    \end{itemize}
+\end{itemize}
+Take now 2 cubes move one of them along to a new (the $4^{th}$) direction, connect the vertexes and we get a 4-dimensional object and if we extend it at the infinity in all the 4 direction, then we get  the 4 - dimensional space $\to \mathbb{R}^4$. A $n$-dimensional space is  described by $\mathbb{R}^n$.
+
+In $\mathbb{R}^n$, a $k$-dimensional object (where $0 \le k \le b-1$ is described by parametric equations with $k$ different parameter, it has $k$ degrees of freedom. Given a space of dimension $n$ (i.e., $\mathbb{R}^n$) a k-dimensional object is a subspace of $\mathbb{R}^n$ of dimension $k$. 
+$$\mathbb{R}^n = \mathbb{R} \times \mathbb{R} \times \dots \times \mathbb{R}= \left\{ (x_1, x_2, \dots, x_n): x_1, x_2, \dots, x_n \in \mathbb{R} \right\} $$
+Similarly to $\mathbb{R}^2$ and $\mathbb{R}^3$, also in $\mathbb{R}^n$ points and vectors are the same objects described by $n$-tuple of real numbers.
+\begin{itemize}
+    \item Multiplication by a scalar
+    \begin{align*}
+        &\mathbb{R} \times \mathbb{R}^n \longrightarrow \mathbb{R}^n\\
+        &(t, \vec v) \longmapsto t \vec v = (tv_1, tv_2, \dots, tv_n)
+    \end{align*}
+    \item Sum (componentwise)
+    \begin{align*}
+        &\mathbb{R}^n \times\mathbb{R}^n \longrightarrow \mathbb{R}^n \\
+        &(\vec v, \vec w) \longmapsto \vec v + \vec w = (v_1+w_1, \dots, v_n+w_n)
+    \end{align*}
+\end{itemize}
+$\mathbb{R}^n$ equipped with these two operations has nice proprieties! Consider a set $V$ equipped with two operations:
+\begin{align*}
+    *&: V \times V \longrightarrow V\\
+    \odot &: \mathbb{R} \times V \longrightarrow V
+\end{align*}
+where this operations satisfy the following proprieties:
+\begin{enumerate}
+    \item $*$ is associative: $\forall \ u,v,w \in V \quad (u*v)*w = u*(v*w)$
+    \item $*$ is commutative: $\forall \ u,v \in V \quad u*v = v*u$
+    \item extistence of identity: $\exists e \in V$ s.t. $\forall \ v \in V \quad e*v=v$
+    \item existence of inverses: $\forall \ v \in V,\ \exists w \in V$ s.t. $v*w = e$
+    \item $\forall \ v \in V$, $1\odot v = v$
+    \item $\forall \ s,t \in \mathbb{R}, \ \forall \ v \in V$, \quad $(s+t) \odot v = (s \odot v) * (t \odot v)$
+    \item $\forall \ s \in \mathbb{R}, \forall \ v,w \in V \quad t \odot (v*w)=(t\odot v) * (t \odot w)$
+\end{enumerate}
+Then we say that $V$ is a vector space over $\mathbb{R}$ (real vector space)
+\begin{remark}[Remark]
+    $\mathbb{R}^n$ with ore operation is a vector space over $\mathbb{R}$
+\end{remark}
+In a vector space $V$ we always have a basis that is a set of elements such that all the elements of $V$ are linear combination of the elements of the basis.
+
+In $\mathbb{R}^n$, a basis contains always $n$ elements, indeed a set of $n$ linear independent vectors generates all the elements of $\mathbb{R}^n$. 
+
+In other words if $\left\{ \vec b_1, \vec b_2, \dots, \vec b_n \right\}$ is a basis of $\mathbb{R}^n$, then $\forall \ \vec v \in \mathbb{R}^n$ we have $\vec v = a_1 \vec b_1 +a_2 \vec b_2 + \dots + a_n \vec b_n$ for $a_1, \dots, a_n \in \mathbb{R}$.
+
+A special basis is the canonical basis $\left\{ \vec e_1, \vec e_2, \dots, \vec e_n \right\}$:
+$$\vec e_1 = (1,0,\dots,0) \qquad\vec e_2 = (0,1,\dots,0) \qquad \cdots \qquad \vec e_{n-1} = (0,\dots,1,0) \qquad \vec e_{n} = (0,\dots,0,1)$$
+In $\mathbb{R}^n$, we say that $m$ vectors $\vec v_1, \dots, \vec v_m$ are linearly independent when
+$$c_1 \vec v_1 + \dots, c_w \vec v_m = \vec 0 \iff c_1 = \dots = c_m = 0$$
+We say that they are linearly dependent when there exist $c_1, \dots, c_m \in \mathbb{R}$ not all zeros such that $c_1 \vec v_1 + \dots, c_w \vec v_m = \vec 0$ 
+
+In $\mathbb{R}^n$, we can construct a basis if we take $n$ linearly independent vectors.
+\subsection{Euclidean norm}
+Given a vector $\vec v \in \mathbb{R}^n$m the Euclidean norm of $\vec v$ is
+\begin{align*}
+    ||\vec v|| = d&(\vec v, \vec 0) = \sqrt{v^2_1 + v^2_2 + \dots + v^2_n} \\
+    d&(V,O)
+\end{align*}
+The Euclidean norm satisfies the triangle inequality:
+$$\forall \ \vec v, \vec w \in \mathbb{R}^n \qquad ||\vec v + \vec w|| \le || \vec v||  + ||\vec w||$$
+\subsection{Dot product}
+\begin{align*}
+    \bullet : &\mathbb{R}^n \times \mathbb{R}^n \longrightarrow \mathbb{R} \\
+    &\left(\vec v, \vec w\right) \longmapsto \vec v \bullet \vec w =  v_1 w_1 +  v_2 w_2 + \dots + v_n w_n 
+\end{align*}
+In $\mathbb{R}^2$ and $\mathbb{R}^3$ (in general in $\mathbb{R}^n$ two vectors $\vec v$ and $\vec w$ are orthogonal if and only if $\vec v \bullet \vec w = 0$

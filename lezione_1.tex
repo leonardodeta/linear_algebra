@@ -1,0 +1,157 @@
+\section{Introduction}
+In linear algebra we study object, also a point is a linear object. Usually we study this object from an geometry point of view, in this course we see the algebrian point of view. When we do \textbf{operations} we are doing algebra. Vector are a kind of linear object, we can see a vector like a point.
+
+In $\mathbb{R}^3$ we have more kind of linear objects. In $\mathbb{R}^4$ we start to have problem whit the geometrical point of view. Whit equations i can describe objects in every dimension. Vector spaces is very important in linear algebra. Matrix are very important because we also have functions for transform object.
+\section{Sets}
+We denote by $\emptyset$ the empty set.
+\begin{align*}
+&\mathbb{N} = \left\{ 0, 1, 2, \cdots \right\} \text{ Natural numbers}\\
+&\mathbb{Z} = \left\{\cdots, -2, -1, 0, 1, 2, \cdots \right\} \text{ Integers}\\
+&\mathbb{Q} = \left\{ \frac{a}{b} : a, b \in \mathbb{Z}, b \ne 0 \right\}
+\end{align*}
+\begin{center}
+    $\mathbb{R}$ the set of all  real numbers, Every real number is the limit of a sequence of rational numbers.
+\end{center}
+
+\subsection{Examples}
+\begin{align*}
+&A = \left\{ x \in \mathbb{R} : -5 \le x \le 2\right\}11
+&B = \left\{ x \in \mathbb{Z} : -5 \le x \le 2 \right\}\\
+&C = \left\{ x \in \mathbb{R} : x > 1 \right\}
+\end{align*}
+\subsection{Operation between sets}
+Given two set $A$ and $B$ we define the following operation: 
+\begin{itemize}
+    \item Intersection: $A \cap B = \left\{ x : x \in A \cap x \in B\right\}$
+    \item Union $A \cup B = \left\{ x: x \in A \lor X \in B \right\}$
+    \item Difference $A \setminus B = \left\{ x : x \in A \land x \not\in B \right\}$
+    \item Cartesian product $A \times B = \left\{ (x,y): x \in A \land y \in B \right\}$
+\end{itemize}
+\section{Cartesian plane}
+The cartesian plane is a 2 dimensional object. All the $\mathbb{R}$ can be represented on an «oriented line» where we fixed a special point, namly the origin O. In a similar way we can describe all the elements of $\mathbb{R} \times \mathbb{R} = \mathbb{R}^2 = \left\{ (x, y) : x \in \mathbb{R}, y \in \mathbb{R}\right\}$ with the cartesian plane. We take 2 oriented lines which are orthogonal and we call the origin O the interaction between these lines (representing the element $(0, 0) \in \mathbb{R}^2$.
+
+The horizontal line is called the axis of abscises or the x-axis. The vertical line is called of ordinate or the y-axis.
+
+Evrey point $P$ descibe an element of $\mathbb{R}^2$ since it is identified by two set number $X_P$ and $X_P$ which are its cordinated, i. e., 
+
+\begin{align*}
+    \text{The y-axis is the following set } &= \left\{ (0,y) \in \mathbb{R}^2 \right\} = \left\{ (0,y): y \in \mathbb{R}\right\} \\
+    & = \left\{ (x,y) \in \mathbb{R}^2 : x = 0 \land y \in \mathbb{R} \right\}
+\end{align*}
+\begin{align*}
+    \text{The x-axis is the following set } &= \left\{ (x,0) \in \mathbb{R}^2 \right\} 
+    = \left\{ (z,0): z \in \mathbb{R}\right\} \\
+    &= \left\{ (x_1,x_2) \in \mathbb{R}^2 : x_2 = 0 \right\}
+\end{align*}
+
+Given two point $A$ and $B$ $\in \mathbb{R}^2$, we can evaluate theri distance (euclidean distance) which is the lengh of the segment $\overline{AB}$:
+\begin{align*}
+    d(A,B)=||\overline{AB}|| &= \sqrt{(x_B - x_A)^2 + (y_B- y_A)^2} \\
+    &= \sqrt{(x_A - x_B)^2 + (y_A- y_B)^2}
+\end{align*}
+\subsection{Vector in the cartesian plane}
+In general a vector is an arrow. Given a point $P$ in the cartesian plane, i. e., a point of two numbers $(x_P, y_P) \in \mathbb{R}^2$ it also indentified a vector of the plane. 
+The point $P$ identifies the vector $\vec{OP} = (x_P, y_p)$. Sometimes we will also use the notion $\vec{\mathbf{v}}$ or $\mathbf{v}$ for a vector.
+$$\mathbf{v} = (\mathbf{v}_1, \mathbf{v}_2) \in \mathbb{R}^2$$
+We have that, from this algebric point of view, point and vector are equivalent, they are the same object described by a point or set. 
+\subsection{Operations in the cartesian plane}
+\subsubsection{Scalar multiplication}
+Multiplication by a sclar, i. e., by a real number. Givern a point $A = (x_A, y_A)(\Leftrightarrow Q = (x_A, y_A) = \vec{OA})$ and a scalr $t\in \mathbb{R}$ we define the multiplication by a scalar $tA = (tx_A, ty_A)$. 
+$$\mathbb{R}^2 \times\mathbb{R} \longrightarrow \mathbb{R}^2$$
+$$(A\times t) \longrightarrow tA$$
+
+The effect of the multiplication by a scalar on a vector $\vec{\textbf{a}}$ ub fact the vertor $\mathbb{a}$ is stretched
+
+\subsubsection{Sum}
+Given two points $A = (x_A, y_A)( \Leftrightarrow a = (x_A, y_A))$ and $B= (x_B,y_B)$ the sum is defined as
+$$A+B = (x_A+x_B, y_A+y_B)$$
+\begin{align*}
+\mathbb{R}^2 \times \mathbb{R}^2 &\longrightarrow \mathbb{R}^2\\
+(A,B) &\longrightarrow A+B
+\end{align*}
+
+$a + b (\Leftrightarrow A+B)$ is the diagonal of the parallelogram whith $a$ and $b$ 
+
+the following proprieties hold:
+$$\forall \ a, b, c \in \mathbb{R}^2, \forall \ t \in \mathbb{R} \text{ we have}$$
+\begin{itemize}
+    \item $a+b = b+a$
+    \item $(a+b) + c = a + (b+ c)$
+    \item $t(a+b)=ta + ta$
+    \item $a + 0 = a$ when $0 = (0,0) =$ origin
+    \item $(-1)a = -a$ when $a+(-a)=0$
+\end{itemize}
+\subsection{Lines in the cartesian plane}
+Given a point $A = (x_A, y_A) \in \mathbb{R}^2$, there exist one and only one line $\ell$ through the origin O and the point A. Now we went to describe the coordinates of all point. 
+
+Let us take a generic point $P=(x_P, y_P)\in \ell$ and let us find its coordinate in term of $A$. The triangles $OAH$ and $OPC$ are similar (they have the same angles) and consequently the side are proportion (by the same factors):
+$$||\overline{OK}|| = t||\overline{OH}|| \quad \text{and} \quad  ||\overline{PK}|| = t ||\overline{AH}|| \text{ for a certain } t \in \mathbb{R}$$
+that is
+$$\begin{cases}
+    x_p' =t x_A\\
+    y_p' = ty_A
+\end{cases} \quad \forall \ t \in \mathbb{R} \qquad \begin{cases}
+    x = tx_a\\
+    y= ty_A
+\end{cases} \quad \forall \ t \in \mathbb{R}$$
+These are the parametric equations of a line through the origin and given a point $A$. 
+$$A = (2,3) \qquad \begin{cases}
+     x= 2t \\
+    y = 3t
+\end{cases} \quad \forall \ t \in\mathbb{R}$$
+$$\text{In other words} \quad \ell = \left\{ (x,y) \in \mathbb{R}^2: x=tx_A, y=ty_A, \forall \ t \in \mathbb{R} \right\} \quad (1)$$
+The cartesian equation of a line through the origin is 
+$$y = mx \qquad \text{where} \qquad m = \frac{y_A}{x_A} \quad \text{slope}$$
+$$\ell \left\{ (x,y) \in \mathbb{R}^2 : y = mx, m=\frac{y_A}{x_A} \right\} \quad (2)$$
+Let us Considering the set $(1)$ and check that $O$ ans $A$ belong to this set:
+$$O \in \ell \text{ because if we take } t=0, \text{ we get } x = 0 \cdot X_A= 0, y = 0\cdot y_A = 0 
+$$
+$$\Rightarrow (0,0) \in \ell$$
+$A \in \ell$ because if we take $t=1$, we have $x=x_A$, $y=y_A \Rightarrow A \in \ell$
+
+Let us check that $O$ and $A$ belong to $   \ell$ exploiting the set defined in $(2)$:
+\begin{align*}
+    &O = (0,0) \in \ell \quad\text{ is true, because } \quad 0 = m\cdot 0\\
+    &A= (x_A, y_A) \in \ell \quad \text{ is true, because } \quad y_A = mx_A \Leftrightarrow y_A = \frac{y_A}{\not{ x_A}} \cdot \not x_A
+\end{align*}
+We can check that a point provided by the parametric equations satisfies the cartesian equation. 
+
+Let us consider a point $(tx_A, ty_A)$ and check if it satisfies the cartesian equation $y=mx$:
+$$ty_A = mtx_A \Leftrightarrow ty_A = \frac{y_A}{\not x_A}t \not x_a \Leftrightarrow ty_A = ty_Ax$$
+\begin{example}
+    Consider the line through the origin and $A = (5,2)$.
+    $$\text{The parametric equation are } \quad \begin{cases}
+        x= 5t\\
+        y= 2t
+    \end{cases} \quad \forall t \in \mathbb{R} $$
+    $$t = 0 \quad (0,0), \qquad t= 1 \quad (5,2), \qquad t=-2 \quad \left(-10,-4\right),  $$ 
+    $$t= \frac{1}{3} \quad \left(\frac{5}{3}, \frac{2}{3}\right) \qquad \dots \qquad t=\sqrt{3} \quad \left(5\sqrt{3},2\sqrt{3}\right)$$
+    All belong to the line. 
+    
+    The point $(10,3)$ belong to the line? $ \qquad t=2 \quad (10,4)$
+
+    In order to answer to this question we must solve the following linear system
+    $$\begin{cases}
+        5t = 10\\
+        2t = 3
+    \end{cases}$$
+    where $t$ is the unknown, but this linear system doesn't have solutions!
+
+    This $(10,3)$ doesn't belong to the line
+    The cartesian equation of this line is $y = \frac{2}{5}x \to 3=\frac{2}{5}\cdot10$ is not true! is not an identity
+\end{example}
+Now, let us describe the parametric equations of a line (not necessary through the origin). Given two points $A=(x_A, y_A)$ and $B = (x_B, y_B)$ we want to describe the coordinates of a generic point $P$ over the line through $A$ and $B$. We can consider the line $\ell'$ parallel to $\ell$ and passing through the origin. The parametric equations of $\ell'$ are:
+$$\begin{cases}
+    x = t(x_B-x_A)\\
+    y = t(y_B-y_A)
+\end{cases} \quad \forall \ t \in \mathbb{R}$$
+The parametric equations of $\ell$ are
+$$\begin{cases}
+    x = x_A + t(x_B - x_A)\\
+    y = y_A + t(y_B - y_A)
+\end{cases} \quad \forall \ t \in \mathbb{R}$$
+this 
+$$\ell \left\{ (x,y) \in \mathbb{R}^2 : x = x_A + t (x_B-x_A), y = y_A + t(y_B-y_A),  \ \forall \ t \in \mathbb{R} \right\}$$
+Similarly, tha cartesian equation is
+$$y = mx + q$$
+where $m = \frac{y_B - y_A}{x_B - x_A}$ slope and $q = \frac{y_A x_B - x_Ay_B}{x_B-x_A}$ constant term
