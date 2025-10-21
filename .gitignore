@@ -1,8 +1,23 @@
+# LaTeX build files
 *.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
 *.log
+*.lot
 *.out
 *.toc
 *.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Ignore all generated PDFs except the final ones
 *.pdf
 !pdf/*.pdf
 
+# macOS system files
+.DS_Store
