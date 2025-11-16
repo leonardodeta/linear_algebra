@@ -1,0 +1,86 @@
+Given a vector $\vec{v} \in \mathbb{R}^4$, the component w.r.t the canonical bases are $(v_1, v_2, v_3, v_4)$ because
+$$\vec{v} = v_1 \vec{e}_1 + v_2 \vec{e}_2 + v_3 \vec{e}_3 + v_4 \vec{e}_4$$
+that is $v_1, v_2, v_3, v_4$ are the coefficent og the linear combination of $\vec{e}_1, \vec{e}_2, \vec{e}_3, \vec{e}_4$ from which we obtain $\vec{v}.$
+
+If we have another basis $\vec{b}_1, \vec{b}_2, \vec{b}_3, \vec{b}_4$, then the compoent og $\vec{v}$ are $(w_1, w_2, w_3, w_4)$ such that
+$$\vec{v} = w_1\vec{b}_1 + w_2\vec{b}_2 + w_3\vec{b}_3 + w_4\vec{b}_4$$
+In the previous example the component of $(1,0,3,5)$ w.r.t. the canonical basis are $(1,0,3,5)$, but the component w.r.t. the basis $(1,2,3,5), (2,1,1,0), (1,1,1,0), (0,1,0,0)$ are 
+$$(1,0,3,5) = 1 \cdot (1,2,3,5) + 0 \cdot (2,1,1,0) + 0 \cdot (1,1,1,0) + (-2)(0,1,0,0)$$
+
+Two linear system are equivalent if the sets of solutions are the same
+
+Let $S_1$ be the set of solutions of $\begin{cases}
+    x_1 - x_2 + 7x_3 = 0\\
+    x_1 = x_2 - 7x_3
+\end{cases}$
+$$S_1 = \left\{ (x_2 - 7x_3, x_2, x_3, x_4) : x_2, x_3, x_4 \in \mathbb{R} \right\}$$
+$$(-6, 1, 1, 5) \text{ is a solution of the linear system}$$
+Let $S_2$ be the set of solutions of $\begin{cases}
+    -2x_1 + 2x_2 - 14x_3 + 5x_4 = 0 \\
+    x_4 = 0
+\end{cases}$
+$$S_2 = \left\{ (x_2 - 7x_3, x_2, x_3, 0) : x_2, x_3 \in \mathbb{R} \right\}$$
+$$S_2 \subseteq S_1 \qquad \text{but} \qquad S_2 \not = S_1$$
+\begin{align*}
+    S_1, S_2 \subseteq \mathbb{R}^4 \qquad &S_1\text{ has 3 free variables} \\
+    &S_2\text{ has 2 free variables}
+\end{align*}
+$$c_1 \vec{b}_1 + c_2 \vec{b}_2 + c_3 \vec{b}_3 + c_4 \vec{b}_4 = \vec{v}$$
+Let $V$ be a vector setspace
+\begin{definition}
+    We say that $\left\{v_1, \dots, v_k\right\}$, whith $v_1, \dots, v_k \in V$ is a set of generators of $V$ if
+    $$V = \operatorname{span}
+(v_1, \dots, v_k) = \left\{a_1 v_1 + \dots + a_k v_k : a_1, \dots, a_k \in \mathbb{R}\right\}$$ 
+That is $\forall \ v in V$, we have $v = \vec{c}_1 v_1 + \dots + c_k v_k$ for some $c_1, \dots, c_k \in \mathbb{R}$ 
+\end{definition}
+\begin{definition}
+    We say that $\left\{b_1, \dots, b_h\right\}$, with $b_1, \dots, b_h \in V$ is a basis of $V$ if
+    \begin{enumerate}
+        \item $V = \operatorname{span}(b_1, \dots, b_h)$ (i.e., $b_1, b_h$ is a set of generators)
+        \item $b_1, \dots, b_h$ are linearly idependet
+    \end{enumerate}
+\end{definition}
+\begin{example}
+    $\left\{\vec{e}_1, \vec{e}_2, \vec{e}_3 \right\}$ is a basis of $\mathbb{R}^3$, $\left\{\vec{e}_1, \vec{e}_2, \vec{e}_3, (1,2,3)\right\}$ is a set of generators of $\mathbb{R}^3$ but not a basis
+\end{example}
+\begin{definition}
+    The number of elements is any basis of $V$ is called the dimension of $V$
+\end{definition}
+The dimension of $\mathbb{R}^n$ is $n$
+
+Given $W \subseteq \mathbb{R}^n$ s.t. $W$ is a vector space, i.e., a vector subspace of $\mathbb{R}^n$, then the dimension $W$ can be $1,2, \dots, n-1$ (where $W$ is a proper subset of $\mathbb{R}^n$). If $W = \left\{ \vec{0}\right\}$ then it is a trivial vector subspace of $\mathbb{R}^n$ with dimension 0. 
+
+In $\mathbb{R}^2$ we can have
+\begin{itemize}
+    \item dimension $W = 0$, $W = \left\{(0,0)\right\}$
+    \item dimension $W = 1$, then a basis is $\left\{\vec{v}\right\}$ and $W = \operatorname{span}(\vec{v}) = \left\{t\vec{v} : t \in \mathbb{R}\right\}$ that is $W$ is a line in $\mathbb{R}^2$ contaning the origin
+\end{itemize}
+In $\mathbb{R}^3$, we can have
+\begin{itemize}
+    \item dimension $W = 0$, $W = \left\{(0,0,0)\right\}$
+    \item dimension $W=1$, then a basis is $\left\{\vec{v}\right\}$ and $W = \operatorname{span}(\vec{v}, \vec{w})$ that is $W$ is a line in $\mathbb{R}^3$ containg the origin
+    \item dimension $W = 2$, then a basis is $\left\{\vec{v}, \vec{w}\right\}$ and $W = \operatorname{span}(\vec{v}, \vec{w})$ that is $W$ is a plane in $\mathbb{R}^3$ containg the origin.
+    \item dimension $W = h$, for $1 \le h \le n-1$, $W$ is a $h$-dim. space through the origin dercibed by a basis $\left\{\vec{b}, \dots, \vec{b}_h\right\}$, i.e. $W = \operatorname{span}(\vec{b}_1, \dots, \vec{b}_h)$
+\end{itemize}
+Given two vector spaces $V$ and $W$, we say that they are isomorphic if there exist a function (called isomorphism)
+$$f : V \to W$$
+s.t.
+\begin{enumerate}
+    \item $f$ is surjective: every element of $W$ has pre-image, i.e., $\forall \ w \in W$ there exists $v \in V$ s.t. $f(v)=w$
+    \item $f$ is injective: $\forall \ v_1, v_2 \in V$ if $v_1 \not = v_2$ then $f(v_1) \not = f(v_2)$ equivalently we can say that $\forall \ v_1, v_2 \in V$
+    $$f(v_1) = f(v_2) \Leftrightarrow v_1 = v_2$$
+    (A function $f$ is both injective and surjective is called a bijection and it is a one-to-one correspondence)
+    \item Let $+_v$ and $+_w$ be the operation between elements of $V$ and $W$, respectively, $\forall \ v_1, v2 \in V$ $f(v_1 +_v v_2) = f(v_1) +_w f(v_2)$ (if $v_1 +_v v_2 = v \in V \quad f(v)=w\in W \quad f(v_1) = w_1 \in W,  f(v_2) = w_2 \in W$)
+    
+    $\forall \ k \in \mathbb{R}, \forall \ v \in V, f(kv)= kf(v)$
+\end{enumerate}
+A function $f$ only satisfying 3. is called a linear map (a bijective liear map is an isomorphian).
+
+A vector sapce $V$ of dimension $n$ is isomorphic to $\mathbb{R}$ indeed, let $\left\{b_1, \dots, b_n \right\}$ be a basis of $V$, this $\forall \ v \in V$
+$$v = x_1 b_1 + x_2 b_2 + \dots + x_n b_n \quad \text{for} \quad x_1, x_2, \dots, x_n \in \mathbb{R}$$
+then
+\begin{align*}
+   f : V &\to \mathbb{R}^n\\
+v &\to (x_1, x_2, \dots, x_n) 
+\end{align*}
+is an isomorphian.
