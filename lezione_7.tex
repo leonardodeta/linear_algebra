@@ -1,0 +1,181 @@
+\subsection{Example of vector space with infinite dimesnion}
+Let $\mathbb{R}\left[x\right]$ be the set of polynomials with coefficents in $\mathbb{R}$
+$$\mathbb{R}\left[x\right] = \left\{a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots + a_n x^n : a_0, \dots, a_n \in \mathbb{R} \quad \forall n \in \mathbb{N}\right\}$$
+Given $P(x) = a_0 + a_1 x + \dots + a_n x^n$ where $a_n \not = 0$ and we say that the degree $\deg P(x)$ is $n$
+\begin{example}
+    $$P_1(x) = 1 + 2x + 3x^3 + x^4 \qquad P_2(x)= \frac{1}{2} - x + 2x^2$$
+    $$P_1(x) + P_2(x) = \frac{3}{2} + x + 2x^2 + 3x^3 + x^4$$
+\end{example}
+\begin{example}
+    $$P(x) = -3 + x + \sqrt{2}x^2 + x^5 -7x^6, \qquad k = 2$$
+    $$kP(x) = -6 + 2x + 2\sqrt{2}x^2 + 2x^5 - 14x^6$$
+\end{example}
+The set $\mathbb{R}\left[x\right]$ with these operations is a vector space.
+
+There is a one to one corresponcence (an injective and surjective map) between $\mathbb{R}\left[x\right]$ and $\mathbb{R}^\infty$ what is the set of vectors of infinite lenght
+\begin{align*}
+   f: \mathbb{R}\left[x\right] &\to \mathbb{R}^\infty \\
+   P(x) &\mapsto (a_0, a_1, \dots, a_n, 0,0,0, \dots)
+\end{align*}
+This map is also a linear map (meaning that $f(P_1(x) + P_2(x)) = f(P_1(x)) + f(P_2(x)),\ f(kP(x)) = kf(P(x)))$
+
+This $f$ is an isomorphian and $\mathbb{R}\left[x\right]$ is «equal» (up to isomorphian) to $\mathbb{R}^\infty$.
+
+A basis of $\mathbb{R}^\infty$ is
+$$\left\{(1,0,0, \dots), (0,1,0, \dots), (0,0,1,0,0, \dots), \dots \right\}$$
+and the dimension of $\mathbb{R}^\infty$ is $\infty$
+$$P(x) = a_0 \cdot 1 + a_1 \cdot x + a_2 \cdot x^2 + \dots + a_n \cdot x^n + 0 \cdot x^{n+1} + \dots$$
+\section{Determinant of a matrix}
+Consider $A\vec{x} = \vec{b}$ for solving it we transorm using elementary operations the augmented matrix $\left(A|\vec{b}\right)$ in RREF.
+
+If $A \in \mathbb{R}^{n \times n}$, we can solve $A\vec{x} = \vec{b}$ also in another way
+\begin{align*}
+    5x &= 3\\
+    x &= \frac{1}{5} \cdot 3
+\end{align*}
+if $A \in \mathbb{R}^{n\times n}$ is an invertible matrix, that is there exists a matrix $B \in \mathbb{R}^{n \times n}$ such that $AB = BA = I_n$ and we denote $B$ by $A^{-1}$ and we call it the inverse of $A$. This if $A$ is invertible and the inverse in $A^{-1}$ then 
+$$A\vec{x} = \vec{b} \Leftrightarrow A^{-1} \cdot A \vec{x} = A^{-1} \vec{b} \Leftrightarrow I_n \cdot \vec{x} = A^{-1}\vec{b} \Leftrightarrow \vec{x} = A^{-1} \vec{b}$$
+For studying the invertibility of a square matrix we introduce the notion of determinat.
+
+The determinat is a real number associated to a square matrix. Let us start with a matrix $A \in \mathbb{R}^{2 \times 2}$ which is
+$$A = \begin{bmatrix}
+    a & b \\
+    c & d
+\end{bmatrix} \qquad a,b,c,d \in \mathbb{R}$$
+$$\det(A) = ad-bc$$
+Consider now $A \in \mathbb{R}^{3\times 3}$ which is
+$$A = \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{bmatrix}$$
+$$\det(A) = a_{11} \cdot \det \begin{bmatrix}
+    a_{22} & a_{23} \\
+    a_{32} & a_{33}
+\end{bmatrix} - a_{12} \cdot \det \begin{bmatrix}
+    a_{21} & a_{23} \\
+    a_{31} & a_{33}
+\end{bmatrix} + a_{13} \cdot \det \begin{bmatrix}
+    a_{21} & a_{22} \\
+    a_{31} & a_{32}
+\end{bmatrix}$$
+In general given $A \in \mathbb{R}^{n \times n}$, $A=(a_{ij})$
+$$\det A = a_{11} \cdot \det(A_{11}) - a_{12} \cdot \det(A_{12}) + a_{13} \cdot \det(A_{13}) - a_{14} \cdot \det(A_{14}) + \cdots + (-1)^n a_{1n}\det(A_{1n})$$
+
+where $A_{11} \in \mathbb{R}^{n-1 \times n-1}$ obtained from $A$ removing first row and first column
+
+where $A_{12} \in \mathbb{R}^{n-1 \times n-1}$ obtained from $A$ removing first row and second column
+
+where $A_{1j}\in \mathbb{R}^{n-1 \times n-1}$ obtained from $A$ removing first row and $j^{th}$ column for $j = 1, \dots, n$
+
+This is the so-called Laplace expansion of the determinat.
+\begin{remark}[Remark]
+    If $A\in \mathbb{R}^{2 \times 2}$, then $\det(A)$ is the area of the parallelogram with sides the columns of $A$.
+
+    If $A \in \mathbb{R}^{3 \times 3}$, then $\det(A)$ is the volume of the parallelepiped with sides the columns of $A$. Similarly this works if $A \in \mathbb{R}^{n \times n}$, $\det(A)$ is the volume of the parallelepiped with dimension $n$ and sides the columns of $A$.
+\end{remark}
+\begin{remark}[Remark]
+    A matrix $A\in \mathbb{R}^{n \times n}$ is invertible if and only if $\det(A) \not = 0$
+\end{remark}
+\begin{remark}[Remark]
+    Consider $A \vec{x} = \vec{b}$ $A \in \mathbb{R}^{n \times n}$, the solution is unique if and only if $\det(A) \not = 0$ and the solution is given by $x_i = \frac{\det(A_i)}{\det(A)}$ where $A_i \in \mathbb{R}^{n \times n}$ obtained from $A$ replacing the $i^{th}$ column of $A$ with $\vec{b}$
+
+    This is the Cramer rule.
+\end{remark}
+\begin{example}
+    $$A = \begin{bmatrix}
+        1 & 0 & 2 \\
+        0 & 2 & 4 \\
+        0 & 0 & 7 
+    \end{bmatrix} \qquad B = \begin{bmatrix}
+        0 & 1 & 2 \\
+        1 & 1 & 4 \\
+        1 & 0 & 0
+    \end{bmatrix}$$
+    \begin{align*}
+        \det(A) &= 1 \cdot \det \begin{bmatrix}
+            2 & 4 \\
+            0 & 7
+        \end{bmatrix} - 0 \det \begin{bmatrix}
+            0 & 4 \\
+            0 & 7
+        \end{bmatrix} + 2 \det \begin{bmatrix}
+            0 & 2 \\
+            0 & 0
+        \end{bmatrix} \\
+        &= 1 \times 14 - 0 + 2 \times 0 = 14 \\
+        \det(B) &= -1 \cdot \det \begin{bmatrix}
+            1 & 4 \\
+            1 & 0
+        \end{bmatrix} + 2 \det \begin{bmatrix}
+            1 & 1 \\
+            1 & 0
+        \end{bmatrix} = 4 - 2 = 2
+    \end{align*}
+\end{example}
+\begin{remark}[Remark]
+    For computing the determinat we can apply the definition exploiting any row (not necessarly the firt one).  
+
+    This, if a matrix has a row with many zeros is more convenient to use.
+\end{remark}
+\begin{example}
+    $$B = \begin{bmatrix}
+        0 & 1 & 2 \\
+        1 & 1 & 4 \\
+        1 & 0 & 0
+    \end{bmatrix}$$
+    $$\det(B) = 1 \cdot \det \begin{bmatrix}
+        1 & 2 \\
+        1 & 4
+    \end{bmatrix} + 0 + 0 = 2$$
+    $$C = \begin{bmatrix}
+        1 & -1 & 2 & 4 \\
+        0 & 0 & 0 & 0 \\
+        -7 & 5 & 1 & 2 \\
+        3 & 1 & -5 & 1 
+    \end{bmatrix} \ \det(C) = 0$$
+\end{example}
+\subsection{Properties}
+\begin{enumerate}
+    \item If $A \in \mathbb{R}^{n \times n}$ is in REF and the number of pivots is $n$, then $\det(A)$ is equal to the product of pivots
+    \item If $A \in \mathbb{R}^{n \times n}$ is in REF and the number of pivots is $<n$, then $\det(A) = 0$
+    \item Given $A \in \mathbb{R}^{n\times n}$ and let $B$ be a matrix obtained from $A$ switching two rows, then $\det(B) = - \det(A) \ (\det(A) = - \det(B))$
+    
+    $$A = \begin{bmatrix}
+        1 & 0 & 2 \\
+        0 & 2 & 4 \\
+        0 & 0 & 7
+    \end{bmatrix} \qquad B = \begin{bmatrix}
+        0 & 2 & 4 \\
+        1 & 0 & 2 \\
+        0 & 0 & 7 
+    \end{bmatrix}$$
+
+    check that $\det(A) = - \det(B)$
+    \item Given $A \in \mathbb{R}^{n \times n}$ and let $B$ be a matrix obtained from $A$ multiplying a row of $A$ by a scalar $k$, then $\det(B) = k \det(A)$ 
+    
+    $$A = \begin{bmatrix}
+        1 & 0 & 2 \\
+        0 & 2 & 4 \\
+        0 & 0 & 7
+    \end{bmatrix} \qquad B = \begin{bmatrix}
+        1 & 0 & 2 \\
+        0 & 2 & 4 \\
+        0 & 0 & 1
+    \end{bmatrix}$$
+
+    check that $\det(B) = \frac{1}{7} \cdot \det(A)$
+    \item Given $A \in \mathbb{R}^{n \times n}$ and let $B$ be a matrix obtained from $A$ adding to a row of $A$ a multiple of another row, then $\det(B) = \det(A)$
+    
+    $$A = \begin{bmatrix}
+        1 & 0 & 2 \\
+        0 & 2 & 4 \\
+        0 & 0 & 7
+    \end{bmatrix} \qquad B = \begin{bmatrix}
+        1 & 1 & 4 \\
+        0 & 2 & 4 \\
+        0 & 0 & 7
+    \end{bmatrix}$$
+
+    check that $\det(B) = \det(A)$ 
+\end{enumerate}
