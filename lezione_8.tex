@@ -1,0 +1,158 @@
+\begin{remark}[Remark]
+    Pay attention! If you have a matrix $A$ ans transorm it replacing, e.g., the first row $R_1$ with the row $2R_1 + 3R_2$ then we obrain a new matrix $B$ and $\det B = 2 \det A$
+\end{remark}
+\subsection{Proprieties}
+Given $A, B \in \mathbb{R}^{n\times n}$, $\det(AB) = \det(A) \det (B)$ let us see a method for computing the inverse of a matrix $A \in \mathbb{R}^{n \times n}$ such that $\det A \not = 0$.
+
+We want to compute an unknown matrix $A^{-1} \in \mathbb{R}^{n\times n}$ such that 
+$$A \cdot A^{-1} = I_n$$
+that is
+$$\begin{bmatrix}
+    a_{11} &\cdots &a_{1n} \\
+    \vdots &\ddots &\vdots \\
+    a_{n1} &\cdots &a_{nn}
+\end{bmatrix} \begin{bmatrix}
+    x_{11} &\cdots &x_{1n}\\
+    \vdots &\ddots & \vdots\\
+    x_{n1} &\cdots &x_{nn}
+\end{bmatrix} = \begin{bmatrix}
+    1 &\cdots &0\\
+    \vdots &\ddots & \vdots\\
+    0 &\cdots & 1
+\end{bmatrix}$$
+$a_{ij}$ are known real numbers
+
+$x_{ij}$ are unknown real numbers
+$$\begin{cases}
+    a_{11}x_{11} + \cdots \ + a_{1n}x_{n1} =1\\
+    a_{21}x_{11} + \cdots \ + a_{2n}x_{n1} =0\\
+    \qquad \cdots\\
+    a_{n1}x_{11} + \cdots \ + a_{nn}x_{n1} =0
+\end{cases} \qquad \text{Linear system with $n$ unknown and $n$ equations}$$
+$$\Updownarrow$$
+\begin{center}
+    Linear system whose augmented matrix is $\left(A | \vec{e}_1 \right)$ where $\vec{e}_1 = (1,0,\dots, 0)$
+\end{center}
+Similarly, if we focus on the seond column of $A^{-1}$, we get a linear system whose unknone are $(x_{12}, x_{22}, x_{32}, \dots, x_{n2})$ and the augmented matrix is 
+$$\left(A | \vec{e}_2 \right) \qquad \text{where} \qquad \vec{e}_2 = (0,1,0,\dots, 0)$$
+This, in order to find $A^{-1}$ we need to solve $n$ linear system whose augmented matrices are
+$$\left(A | \vec{e}_1 \right), \left(A | \vec{e}_2 \right), \dots, \left(A | \vec{e}_n \right)$$
+We can solve all these linear systems considering
+$$\left(A | I_n \right)\quad \leftarrow \quad \det A \not = 0$$
+and transforming it into RREF we obtain 
+$$\left(I_n | A^{-1}\right)$$
+\begin{example}
+    $$A = \begin{bmatrix}
+        1 &2 \\
+        3 &0
+    \end{bmatrix} \qquad \det A = -6 \not = 0 \Rightarrow A \text{ inverible}$$
+    $$\left[\begin{array}{cc|cc}
+        1 &2 &1 &0\\
+        3 &0 &0 &1\\
+    \end{array}\right] \longrightarrow \left[ \begin{array}{cc|cc}
+        1 &2 &1 &0 \\
+        0 &6 &3 &-1        
+    \end{array}\right] \begin{array}{l}
+        R_1\\
+        3R_1 - R_2        
+    \end{array}$$
+    $$\longrightarrow \left[ \begin{array}{cc|cc}
+        3 &0 &0 &1 \\
+        0 &6 &3 &-1
+    \end{array} \right] \begin{array}{l}
+        3R_1 - R_2\\
+        R_2
+    \end{array} \longrightarrow \left[\begin{array}{cc|cc}
+        1 &0 &0 &\frac{1}{3}\\
+        0 &1 &\frac{1}{2} &-\frac{1}{6}
+    \end{array}\right] \begin{array}{l}
+        \frac{1}{3}R_1\\
+        \frac{1}{6}R_2
+    \end{array} \quad \text{RREF}$$
+    $$A^{-1} = \begin{bmatrix}
+        0 &\frac{1}{3}\\
+        \frac{1}{2} &-\frac{1}{6}
+    \end{bmatrix}$$
+    $$A \cdot A^{-1} = \begin{bmatrix}
+        1 &2 \\
+        3 &0
+    \end{bmatrix} \begin{bmatrix}
+        0 &\frac{1}{3}\\
+        \frac{1}{2} &-\frac{1}{6}
+    \end{bmatrix} = \begin{bmatrix}
+        1 &0 \\
+        0 &1
+    \end{bmatrix} $$
+    Check that $A^{-1} \cdot A = \begin{bmatrix}
+        1 &0\\
+        0 &1
+    \end{bmatrix}$
+\end{example}
+\section{Linear function}
+\begin{definition}
+    Given two vector spaces $V$ and $W$, with finite dimension. $V \simeq \mathbb{R}^n$ and $W \simeq \mathbb{R}^m$ a linear function $f : \mathbb{R}^n \to \mathbb{R}^m$ is a map such that
+    \begin{enumerate}
+        \item $\forall \ \vec{v}_1, \vec{v}_2 \in \mathbb{R}^n, f(\vec{v}_1 + \vec{v}_2) = f(\vec{v}_1) + f(\vec{v}_2)$
+        \item $\forall \ \vec{v} \in \mathbb{R}^n, \forall \ k \in \mathbb{R}, f(k \vec{v}) = k f(\vec{v})$
+    \end{enumerate}
+    $$f\left(\vec{0}\right) = \vec{0}$$
+    $$ \vec{0} \in \mathbb{R}^n \qquad \vec{0} \in \mathbb{R}^m$$
+\end{definition}
+By 1. we know that $\forall \ \vec{v} \in \mathbb{R}^n$, then $f\left(\vec{0} + \vec{v}\right) = f\left(\vec{0}\right) + f\left(\vec{v}\right) = f\left(\vec{v}\right) \Rightarrow f(\vec{v}) = f\left(\vec{0}\right) + f\left(\vec{v}\right) \Rightarrow f\left(\vec{0}\right) = \vec{0}$ 
+
+If we know the image of the vectors of a basis of $\mathbb{R}^n$, then we are able to compute $f$ an all the vectors of $\mathbb{R}^n$.
+
+If $B = \left\{\vec{b}_1, \dots, \vec{b}_n \right\} \subseteq \mathbb{R}^n$ is a basis of $\mathbb{R}^n$ then, $\forall \ \vec{v} \in \mathbb{R}^n$, we have that $\vec{v} = x_1 \vec{b}_1 + x_2 \vec{b}_2 + \dots + x_n \vec{b}_n$ fore some $x_1, \dots, x_n \in \mathbb{R}$ and
+\begin{align*}
+    f(\vec{v}) &= f\left(x_1 \vec{b}_1 + x_2 \vec{b}_2 + \dots + x_n \vec{b}_n\right)\\
+    &= x_1 f\left(\vec{b}_1\right) + x_2 f\left(\vec{b}_2\right) + \dots + x_n f\left(\vec{b}_n\right)
+\end{align*}
+Let $C = \left\{\vec{c}_1, \dots, \vec{c}_m \right\} \subseteq \mathbb{R}^m$ be a basis of $\mathbb{R}^m$, if we know that 
+$$f\left(\vec{b}_1 \right) = \vec{w}_1 = a_{11}\vec{c}_1 + a_{21}\vec{c}_2 + \dots + a_{m1}\vec{c}_m $$
+$$f\left(\vec{b}_2 \right) = \vec{w}_2 = a_{12}\vec{c}_1 + a_{22}\vec{c}_2 + \dots + a_{m2}\vec{c}_m $$
+$$\cdots$$
+$$f\left(\vec{b}_n \right) = \vec{w}_n = a_{1n}\vec{c}_1 + a_{2n}\vec{c}_2 + \dots + a_{mn}\vec{c}_m $$
+We define
+$$A = \left[f\left(\vec{b}_1\right) \ f\left(\vec{b}_2\right) \ \cdots \ f\left(\vec{b}_n\right) \right]$$
+$$A = \begin{bmatrix}
+    a_{11} &a_{12} &\cdots &a_{1n}\\
+    a_{21} &a_{22} &\cdots &a_{2n}\\
+    \vdots &\vdots &\ddots &\vdots\\
+    a_{m1} &a_{m2} &\cdots &a_{mn}
+\end{bmatrix} \in \mathbb{R}^{m \times n}$$
+This is the matrix whose columns are the component of $f(\vec{b}_1)$ w.r.t. the basis $C$ of $\mathbb{R}^m$. This matrix $A$ is the matrix associated to $f$ and «it works like $f$»
+
+Take $\vec{v} \in \mathbb{R}^n$, $\vec{v} = v_1 \vec{b}_1 + \cdots + v_n\vec{b}_n$
+\begin{align*}
+    f(\vec{v}) &= v_1 f\left(\vec{b}\right)_1 + \cdots + v_n f\left(\vec{b}_n\right) = v_1 \vec{w}_1 + \cdots + v_n \vec{w}_n = \\
+    &= v_1\left(a_{11} \vec{c}_1 + \dots + a_{m1} \vec{c}_m \right) + \cdots + v_n \left(a_{1n} \vec{c}_1 + \cdots + a_{mn} \vec{c}_m \right) \\
+    &= \left( v_1 a_{11} + \cdots + v_n a_{1n} \right) \vec{c}_1 + \cdots + \left( v_1 a_{m1} + \dots + v_n a_{mn} \right) \vec{c}_m \\
+    &= W \in \mathbb{R}^m
+\end{align*}
+where $\vec{w} = A\vec{v} \Leftrightarrow \vec{w} = f\left(\vec{v}\right)$
+\begin{align*}
+    \begin{bmatrix}
+        a_{11} & \cdots & a_{1n} \\
+        \vdots & \ddots & \vdots \\
+        a_{m1} & \cdots & a_{mn}
+    \end{bmatrix}
+    \begin{bmatrix}
+        v_1 \\
+        \vdots \\
+        v_n
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+        a_{11}v_1 + \cdots + a_{1n}v_n \\
+        \vdots \\
+        a_{m1}v_1 + \cdots + a_{mn}v_n
+    \end{bmatrix}
+    \\[6pt]
+    \mathbb{R}^{m \times n}\quad
+    \mathbb{R}^{n \times 1}
+    &\qquad
+    \mathbb{R}^{m \times 1}
+\end{align*}
+
+
+
