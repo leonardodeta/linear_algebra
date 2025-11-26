@@ -1,0 +1,114 @@
+\begin{remark}[Remark]
+    In general, given $W_1$ and $W_2$ vector spaces, then $W_1 \cup W_2$ is not necessarly a vector space. Indeed if we take an. element $w_1 \in W_1$ nd an element $w_2 \in W_2$, then $w_1, w_2 \in W_1 \cup W_2$ ($w_1, w_2 \not \in W_1 \cap W_2$) but $w_1 + w_2$ is not necessarly in $W_1 \cup W_2$.
+
+    But, $W_1 \cap W_2$ is a vector space, because consider $t_1, t_2 \in W_1 \cap W_2$ then $t_1 + t_2 \in W_1$ ($t_1, t_2 \in W_1$ and $W_1$ vector space), $t_1 + t_2 \in W_2$ ($t_1, t_2 \in W_2$ and $W_2$ vector space).
+
+    This $t_1 + t_2 \in W_1 \cap W_2$, similar obserbation for multuplation by a scalar.
+\end{remark}
+In our special case, we need to prove (or disprove) that $W_1 \cup W_2$ is closed under addition and multiplication by a scalar. Since $W_1$ and $W_"$ are vector spaces we only need to check what happen to $w_1+ w_2$ when 
+$$w_1 \in W_1 \smallsetminus W_2$$
+$$w_2 \in W_2 \smallsetminus W_1$$
+$$w_1 = (y+z,y,z) \qquad w_2 = (t, -t, 2t)$$
+$$w_1 + w_2 = (y+z+t, y-t, z+2t) \in W_1$$
+Actually, we can prove that $W_2 \subseteq W_1$.
+\begin{itemize}
+    \item $(t,-t,2t)$ a general element of $W_2$ is also an element of $W_1$ indeed $-t+2t=t$
+    \item $W_2 =  \text{span}(1,-1,2)$ and $(1,-1,2) = -(1,1,0)+2(1,0,1)$
+    
+    $\Rightarrow (1,-1,2) \in \text{span}((1,1,0), (1,0,1))$
+    \begin{align*}
+        t(1,-1,2) &= t(-(1,1,0)+2(1,0,1))=\\
+        &= -t(1,1,0)+2t(1,0,1) \in \text{span}((1,1,0), (1,0,1)) \in \mathbb{R}^3
+    \end{align*}
+\end{itemize}
+$W_3 = \left\{(t,2t,2t) \in \mathbb{R}^3 : \forall t \in \mathbb{R} \right\} \subseteq \mathbb{R}^3$ is a vector space but $W_1 \cup W_3$ is not a vector space. Indeed,
+$$(y+z,y,z)+(t,2t,2t) = (y+z+t, y+2t, z+2t) \not \in W_1 \cup W_3$$
+\section{Eigenvalues, eigenvectors, eigenspaces}
+Let $f$ be a linear function
+$$f:V \to V$$
+$$\mathbb{R}^n \to \mathbb{R}^n$$
+and let $A \in \mathbb{R}^{n \times n}$ be 
+$$f\left(\vec{v}\right) = \vec{w}$$
+the associated matrix
+$$A\vec{v} = \vec{w}$$
+\begin{definition}
+    We say that a non-zero vector $\vec{v} \in \mathbb{R}^n$ is an eigenvector of $f$ (or equivalently an eigenvector of $A$) if there exist $\lambda \in \mathbb{R}$ such that
+    $$f\left(\vec{v}\right) = \lambda \vec{v} \Leftrightarrow A \vec{v} = \lambda \vec{v}$$
+    and $\lambda$ is called the eigenvalue of the eigenvector $\vec{v}$.
+\end{definition}
+\begin{remark}[Remark]
+    Eigenvectors are special vectors of $\mathbb{R}^n$ that are streched or shrunked by the map $f$, that is $\vec{v}$ and $f\left(\vec{v}\right)$ are on the same line through the origin.
+\end{remark}
+By definition, $\vec{v}$ is an eigenvector those eigenvalue is $\lambda$ 
+$$\Leftrightarrow f\left(\vec{v}\right) = \lambda \vec{v} \Leftrightarrow A\vec{v} = \lambda \vec{v} \Leftrightarrow A \vec{v} - \lambda \vec{v} = \vec{0}$$
+$$\Leftrightarrow (A-\lambda I_n) \vec{v} = \vec{0} \Leftrightarrow B \vec{v} = \vec{0}$$
+$$\lambda I_n \vec{v} = \lambda \vec{v}$$
+$$A-\lambda I_n = B \in \mathbb{R}^{n\times n}$$
+$\vec{v}$ is an eigenvector with eigenvalue $\lambda \Leftrightarrow B\vec{v} = \vec{0}$
+\begin{enumerate}
+    \item $B \vec{v} = \vec{0}$ has one and only one solution $\Leftrightarrow \text{ rank}(B) = \text{rank}\left(B|\vec{0}\right) = n$
+    \item $B \vec{v} = \vec{0}$ has inf. many solutions $\Leftrightarrow \text{ rank}(B) \equiv \text{rank}\left(B|\vec{0}\right) < n$
+\end{enumerate}
+In case 1. we don't have any eigenvectos and $\lambda$ is not an eigenvalue. In case 2. we have eigenvectors with eigenvalue $\lambda$.
+
+$\text{rank}(B) = n$ number of pivots when $B$ is in REF $\det(B) \not = 0$. $\text{rank}(B) < n$, then $\det(B) = 0$
+\begin{example}
+    If 
+    \begin{align*}
+        B = \begin{bmatrix}
+            1 &2 &-1\\
+            0 &5 &1\\
+            0 &0 &3
+        \end{bmatrix} \quad \text{REF} \quad &\text{rank}(B) = 3 = n\\
+        &\det(B) = 1 \cdot 5 \cdot 3 \not = 0
+    \end{align*}
+    If 
+    \begin{align*}
+        B = \begin{bmatrix}
+            1 &2 &-1\\
+            0 &5 &1 \\
+            0 &0 &0 
+        \end{bmatrix} \quad \text{REF} \quad &\text{rank}(B) = 2 < n\\
+        &\det(B) = 0
+    \end{align*}
+    This $\lambda$ is an eigenvalue if and only if 
+    $$\det(B) = \det(A-\lambda I_n)=0$$
+    and once we found there eigenvalues $\lambda \in \mathbb{R}$ then we solve the linear system 
+    $$B \vec{v} = \vec{0}$$
+    where the unknonws are $(v_1, \dots, v_n)$ in order to find the eigenvectos. 
+
+    For instance from $\det(A-\lambda I_n)=0$ where $\lambda$ is unknonwn, we find some eigenvalues, let say $\lambda_1, \lambda_2, \dots, \lambda_m \in \mathbb{R}$ and for each eigenvalue we will find infinitely many eigenvectors solving
+    $$(A- \lambda_1 I_n) \vec{v} = \vec{0}$$
+    $$(A- \lambda_2 I_n) \vec{v} = \vec{0}$$
+    $$\vdots$$
+    $$(A- \lambda_m I_n) \vec{v} = \vec{0}$$
+\end{example}
+\subsection{Summary}
+Given a linear function $f : \mathbb{R}^n \to \mathbb{R}^n$ whose associated matrix is $A \in \mathbb{R}^{n \times n}$ then
+\begin{enumerate}
+    \item compute $\det (A - \lambda I_n) = p(\lambda)$\footnote{this is a polynomial in $\lambda$ of degree $n$ and is called charateristic polynomial of $A$} $\qquad$ where $\lambda$ is unknonwn.
+    \item Solve $p(\lambda) = 0$ and find the solutions (also called the roots of $p(\lambda)$) $\lambda_1, \dots, \lambda_m \in \mathbb{R} (m \le n)$ which are the eigenvalues of $f$ (of $A$).
+    \item For each eigenvalue $\lambda_i$ (for $i = 1, \dots, m$) solve the linear system
+    $$(A - \lambda_i I_n) \vec{x} = \vec{0} \qquad \text{homo. linear system}$$
+    whose unknonws are $(x_1, \dots, x_n)$. The non-zero solutions of this linear system are the eigenvector with eigenvalue $\lambda_i$
+\end{enumerate}
+\begin{definition}
+    Given a linear function $f : \mathbb{R}^n \to \mathbb{R}^n$, let $\lambda$ be an eigenvalue of the set
+    \begin{align*}
+        E_{\lambda} &= \left\{\text{set of eigenvetors with eigenvalue } \lambda\right\} \cup \left\{\vec{0}\right\}\\
+        &= \left\{\text{set of solutions of }\left(A-\lambda I_n\right)\vec{x} = \vec{0}\right\}
+    \end{align*}
+    is called the eigenspace of the eigenvalue $\lambda$.
+\end{definition}
+\begin{remark}[Remark]
+    An eigenspace is a vector space, because it is the set of solutions of a homogeneous linear system!
+
+    Let $\vec{v}_1, \vec{v}_2$ be solutions of a homogeneous linear system $C\vec{x}=0$, thus $C\vec{v}_1 = \vec{0}$, $C\vec{v}_2 = \vec{0}$
+
+    If $\vec{v}_1, \vec{v}_2$ solutions, $\vec{v}_1 + \vec{v}_2$ is a solution?
+    $$C(\vec{v}_1 + \vec{v}_2) = C \vec{v}_1 + C\vec{v}_2 = \vec{0}$$
+    $$\begin{cases}
+        x_1 + x_2 + x_3 = 0 \\
+        x_1 + x_2 = 0
+    \end{cases}$$
+\end{remark}

@@ -1,30 +1,30 @@
 \subsection{Example of vector space with infinite dimesnion}
 Let $\mathbb{R}\left[x\right]$ be the set of polynomials with coefficents in $\mathbb{R}$
 $$\mathbb{R}\left[x\right] = \left\{a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots + a_n x^n : a_0, \dots, a_n \in \mathbb{R} \quad \forall n \in \mathbb{N}\right\}$$
-Given $P(x) = a_0 + a_1 x + \dots + a_n x^n$ where $a_n \not = 0$ and we say that the degree $\deg P(x)$ is $n$
+Given $p(x) = a_0 + a_1 x + \dots + a_n x^n$ where $a_n \not = 0$ and we say that the degree $\deg p(x)$ is $n$
 \begin{example}
-    $$P_1(x) = 1 + 2x + 3x^3 + x^4 \qquad P_2(x)= \frac{1}{2} - x + 2x^2$$
-    $$P_1(x) + P_2(x) = \frac{3}{2} + x + 2x^2 + 3x^3 + x^4$$
+    $$p_1(x) = 1 + 2x + 3x^3 + x^4 \qquad p_2(x)= \frac{1}{2} - x + 2x^2$$
+    $$p_1(x) + p_2(x) = \frac{3}{2} + x + 2x^2 + 3x^3 + x^4$$
 \end{example}
 \begin{example}
-    $$P(x) = -3 + x + \sqrt{2}x^2 + x^5 -7x^6, \qquad k = 2$$
-    $$kP(x) = -6 + 2x + 2\sqrt{2}x^2 + 2x^5 - 14x^6$$
+    $$p(x) = -3 + x + \sqrt{2}x^2 + x^5 -7x^6, \qquad k = 2$$
+    $$kp(x) = -6 + 2x + 2\sqrt{2}x^2 + 2x^5 - 14x^6$$
 \end{example}
 The set $\mathbb{R}\left[x\right]$ with these operations is a vector space.
 
 There is a one to one corresponcence (an injective and surjective map) between $\mathbb{R}\left[x\right]$ and $\mathbb{R}^\infty$ what is the set of vectors of infinite lenght
 \begin{align*}
    f: \mathbb{R}\left[x\right] &\to \mathbb{R}^\infty \\
-   P(x) &\mapsto (a_0, a_1, \dots, a_n, 0,0,0, \dots)
+   p(x) &\mapsto (a_0, a_1, \dots, a_n, 0,0,0, \dots)
 \end{align*}
-This map is also a linear map (meaning that $f(P_1(x) + P_2(x)) = f(P_1(x)) + f(P_2(x)),\ f(kP(x)) = kf(P(x)))$
+This map is also a linear map (meaning that $f(p_1(x) + p_2(x)) = f(p_1(x)) + f(p_2(x)),\ f(kp(x)) = kf(p(x)))$
 
 This $f$ is an isomorphian and $\mathbb{R}\left[x\right]$ is «equal» (up to isomorphian) to $\mathbb{R}^\infty$.
 
 A basis of $\mathbb{R}^\infty$ is
 $$\left\{(1,0,0, \dots), (0,1,0, \dots), (0,0,1,0,0, \dots), \dots \right\}$$
 and the dimension of $\mathbb{R}^\infty$ is $\infty$
-$$P(x) = a_0 \cdot 1 + a_1 \cdot x + a_2 \cdot x^2 + \dots + a_n \cdot x^n + 0 \cdot x^{n+1} + \dots$$
+$$p(x) = a_0 \cdot 1 + a_1 \cdot x + a_2 \cdot x^2 + \dots + a_n \cdot x^n + 0 \cdot x^{n+1} + \dots$$
 \section{Determinant of a matrix}
 Consider $A\vec{x} = \vec{b}$ for solving it we transorm using elementary operations the augmented matrix $\left(A|\vec{b}\right)$ in RREF.
 
